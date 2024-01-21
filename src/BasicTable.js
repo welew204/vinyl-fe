@@ -6,6 +6,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import IconButton from "@mui/material/IconButton";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 export default function BasicTable({ records }) {
   return (
@@ -16,6 +18,7 @@ export default function BasicTable({ records }) {
             <TableCell>Album Title</TableCell>
             <TableCell align='right'>Artist</TableCell>
             <TableCell align='right'>Bringer</TableCell>
+            <TableCell align='right'>Remove</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -28,6 +31,13 @@ export default function BasicTable({ records }) {
               </TableCell>
               <TableCell align='right'>{record.artist}</TableCell>
               <TableCell align='right'>{record.bringer}</TableCell>
+              <TableCell align='right'>
+                <IconButton
+                  aria-label='delete'
+                  onClick={() => console.log("get outta here!")}>
+                  <DeleteForeverIcon />
+                </IconButton>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

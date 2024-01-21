@@ -16,8 +16,13 @@ export default function SearchArea({ records }) {
   return (
     <Stack spacing={2} direction='row'>
       <Stack justifyContent='center'>
-        <TextField id='outlined-basic' label='Outlined' variant='outlined' />
-        <Button>Search</Button>
+        <TextField
+          id='outlined-basic'
+          helperText='Enter an album, artist, or keyword...'
+          label='Search'
+          variant='outlined'
+        />
+        <Button variant='contained'>Search</Button>
       </Stack>
 
       <Grid

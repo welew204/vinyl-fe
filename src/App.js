@@ -42,9 +42,21 @@ function App() {
     <div className='App'>
       <Stack padding={10} spacing={2}>
         <Stack direction='row' spacing={2}>
-          <Button onClick={() => setPage(0)}>Button 1</Button>
-          <Button onClick={() => setPage(1)}>Button 2</Button>
-          <Button onClick={() => setPage(2)}>Button 3</Button>
+          <Button
+            variant={page === 0 ? "contained" : "outlined"}
+            onClick={() => setPage(0)}>
+            Button 1
+          </Button>
+          <Button
+            variant={page === 1 ? "contained" : "outlined"}
+            onClick={() => setPage(1)}>
+            Button 2
+          </Button>
+          <Button
+            variant={page === 2 ? "contained" : "outlined"}
+            onClick={() => setPage(2)}>
+            Button 3
+          </Button>
         </Stack>
         {page === 0 ? <SearchArea records={fe_test_records} /> : null}
         <Stack spacing={2}>
