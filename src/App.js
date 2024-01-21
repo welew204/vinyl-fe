@@ -1,4 +1,19 @@
 import "./App.css";
+import React from "react";
+import {
+  Stack,
+  Button,
+  TextField,
+  Grid,
+  Card,
+  CardActions,
+  CardActionArea,
+  CardMedia,
+  CardContent,
+  Typography,
+} from "@mui/material";
+import BasicTable from "./BasicTable";
+import SearchArea from "./SearchArea";
 
 let fe_test_records = [
   {
@@ -22,22 +37,20 @@ let fe_test_records = [
 ];
 
 function App() {
-  let records = fe_test_records.map((record) => {
-    console.log(record);
-    return (
-      <li
-        key={record.id}
-        className='list-group-item d-flex justify-content-between align-items-center'>
-        <span>{record.title}</span>
-        <span>{record.artist}</span>
-        <span>{record.bringer}</span>
-      </li>
-    );
-  });
+  const [page, setPage] = React.useState(0);
   return (
     <div className='App'>
-      <header>records</header>
-      <ul className='list-group list-group-flush border-top-0'>{records}</ul>
+      <Stack padding={10} spacing={2}>
+        <Stack direction='row' spacing={2}>
+          <Button onClick={() => setPage(0)}>Button 1</Button>
+          <Button onClick={() => setPage(1)}>Button 2</Button>
+          <Button onClick={() => setPage(2)}>Button 3</Button>
+        </Stack>
+        {page === 0 ? <SearchArea records={fe_test_records} /> : null}
+        <Stack spacing={2}>
+          <BasicTable records={fe_test_records} />
+        </Stack>
+      </Stack>
     </div>
   );
 }
