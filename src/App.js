@@ -45,17 +45,17 @@ function App() {
           <Button
             variant={page === 0 ? "contained" : "outlined"}
             onClick={() => setPage(0)}>
-            Button 1
+            Bring an Album
           </Button>
           <Button
             variant={page === 1 ? "contained" : "outlined"}
             onClick={() => setPage(1)}>
-            Button 2
+            What Other People Bringing
           </Button>
           <Button
             variant={page === 2 ? "contained" : "outlined"}
             onClick={() => setPage(2)}>
-            Button 3
+            About
           </Button>
         </Stack>
         {page === 0 ? <SearchArea records={fe_test_records} /> : null}
